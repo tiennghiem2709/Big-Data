@@ -31,7 +31,7 @@ spark = SparkSession.builder()
       .appName("Noname")
       .getOrCreate()
 ```
-### Sử dụng parallelize()
+### 2.1Sử dụng parallelize()
 
 SparkContext có một số chức năng để sử dụng với RDD.
 
@@ -48,7 +48,7 @@ dataList = [a,b,c,d,e,f]
 rdd = spark.sparkContext.parallelize(dataList)
 ```
 
-### Sử dụng textFile()
+### 2.1Sử dụng textFile()
 
 ```python
 import pyspark
@@ -76,7 +76,19 @@ Ví dụ :
   <li>Union(otherDataset)	trả về 1 RDD mới là hợp của tập dữ liệu phần tử đầu vào(nguồn) vàcác phần tử của đối(otherDataset).</li>
   <li>Distinct([numTasks]))	Trả về 1 RDD mới chứa mỗi phần tử là duy nhất của tập dữ liệu nguồn(đầu vào).</li>  
 </ul>
-...
+
+### 3.2 Action
+<p>Qua 1 phương thức actions thì sẽ cho phép trả về 1 giá trị cho driver program sau khi chạy tính toán trên tập dữ liệu.<p>
+ 
+Ví dụ :
+
+<ul>
+  <li>Reduce tổng hợp các phần tử của tập dữ liệu sử dụng hàm func(có 2 đối vàtrả về 1 kết quả)</li>
+  <li>Count()	trả về số phần tử của tập dữ liệu</li>
+  <li>First()	trả về phần tử đầu tiên của tập dữ liệu</li>
+  <li>countByKey() chỉ cho RDD có kiểu (K,V). Trả về 1 Map (K,Int). Int là chỉ số key.</li>
+  <li>Foreach()	Chạy hàm cho mỗi phần tử của tập dữ liệu..</li>  
+</ul>
 
 
 # 4.Spark DataFraem
