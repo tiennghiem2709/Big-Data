@@ -64,7 +64,20 @@ text_file = spark.sparkContext.textFile("drive/MyDrive/BIGDATA/a.txt")
 Khi bạn có RDD, bạn có thể thực hiện các hoạt động chuyển đổi và hành động. Bất kỳ hoạt động nào bạn thực hiện trên RDD đều chạy song song.
 ## 3.Các Tranformation và Action với Rdd
 ### 3.1 Tranformation
-Qua 1 phương thức transformations thì sẽ cho phép tạo mới 1 RDD từ 1 RDD đã tồn tại.
-Tất cả các transformation đều là lazy, có nghĩa là các transformation này sẽ không thực hiện tính toán trong phương thức ngay mà chúng sẽ được lưu lại thành dữ liệu cơ bản( ví dụ như file) và chúng chỉ thực hiện tính toán khi 1 action được gọi để yêu cầu trả về kết quả cho driver program. Nhờ thiết kế này mà Spark chạy hiệu quả hơn.
+
+<p>Qua 1 phương thức transformations thì sẽ cho phép tạo mới 1 RDD từ 1 RDD đã tồn tại. Tất cả các transformation đều là lazy, có nghĩa là các transformation này sẽ không thực hiện tính toán trong phương thức ngay mà chúng sẽ được lưu lại thành dữ liệu cơ bản( ví dụ như file) và chúng chỉ thực hiện tính toán khi 1 action được gọi để yêu cầu trả về kết quả cho driver program. Nhờ thiết kế này mà Spark chạy hiệu quả hơn.</p>
+
+Ví dụ :
+
+<ul>
+  <li>Map(func)	trả về 1 RDD mới bằng cách truyền mỗi phần tử đầu vào (nguồn) qua hàm funcr</li>
+  <li>spark.serializer.objectStreamReset</li>
+  <li>spark.kryoserializer.buffer</li>
+  <li>spark.kryo.registrator</li>
+  <li>spark.kryo.referenceTracking, ...</li>
+</ul>
+
+a
+
 
 # 4.Spark DataFraem
