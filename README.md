@@ -70,14 +70,13 @@ Khi bạn có RDD, bạn có thể thực hiện các hoạt động chuyển đ
 Ví dụ :
 
 <ul>
-  <li>Map(func)	trả về 1 RDD mới bằng cách truyền mỗi phần tử đầu vào (nguồn) qua hàm funcr</li>
-  <li>spark.serializer.objectStreamReset</li>
-  <li>spark.kryoserializer.buffer</li>
-  <li>spark.kryo.registrator</li>
-  <li>spark.kryo.referenceTracking, ...</li>
+  <li>Map(func)	trả về 1 RDD mới bằng cách truyền mỗi phần tử đầu vào (nguồn) qua hàm</li>
+  <li>Filter(func) trả về 1 RDD mới bằng cách chọn những phần tử đầu vào)mà hàm trả về kết quả true.</li>
+  <li>FlatMap(func) tương tự map nhưng khác map ở chỗ, mỗi phần tử đầu vào quaflatMap sẽ trả về 0 hoặc nhiều phần tử đầu ra(có thể hiểu qua map sẽ là 1-1)</li>
+  <li>Union(otherDataset)	trả về 1 RDD mới là hợp của tập dữ liệu phần tử đầu vào(nguồn) vàcác phần tử của đối(otherDataset).</li>
+  <li>Distinct([numTasks]))	Trả về 1 RDD mới chứa mỗi phần tử là duy nhất của tập dữ liệu nguồn(đầu vào).</li>  
 </ul>
-
-a
+...
 
 
 # 4.Spark DataFraem
