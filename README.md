@@ -1,4 +1,28 @@
 # 1.Spark
+## 1.1 Giới thiệu: 
+- Là một framework để xử lý dữ liệu
+- Cung cấp các APIs cho Scala, Java, Python.
+- Được xây dựng bằng ngôn ngữ Scala.
+- Tốc độ nhanh hơn Mapreduce từ 10 ~ 100 lần
+<p align="center">
+<img src="https://static.javatpoint.com/tutorial/pyspark/images/pyspark-rdd2.png" width="460" height="300">
+ </p>
+ 
+## 1.2 Đặc trưng:
+- Fast processing: xử lí nhanh
+- In-memory computation: tính toán trên RAM
+- Fault Tolerance: khả năng chống chịu lỗi
+- Near Real time stream processing: xử lí dữ liệu gần như thời gian thực
+- Lazy evaluation.
+- Support Multiple Languages.
+- Cost Efficent.
+## 1.3 Spark components
+- Spark core: cung cấp nền tảng cho các sprak Applications
+- Spark SQL: xử lí dữ liệu semi-structured/structured data bằng SQL/HQL
+- Spark Streaming: xử lí dữ liệu streaming
+- Spark ML cung cấp công cụ cho việc phân tích dữ liệu bằng các model ML
+- Spark Graph X: xử lí dữ liệu đồ thị
+- Spark R: dùng cho việc phân tích dữ liệu trên R
 # 2.Spark Properties
   Spark Properties kiểm soát hầu hết các tham số ứng dụng và có thể được thiết lập bằng cách sử dụng đối tượng `SparkConf` hoặc thông qua các thuộc tính hệ thống Java.
   
