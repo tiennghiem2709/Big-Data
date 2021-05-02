@@ -256,8 +256,35 @@ Tạo model và predict
 <img src="8.PNG" width="max" height="180">
 </p>
 
+# 6. Map reduce
 
+## MapReduce là gì?
 
+MapReduce là mô hình được thiết kế độc quyền bởi Google, nó có khả năng lập trình xử lý các tập dữ liệu lớn song song và phân tán thuật toán trên 1 cụm máy tính. MapReduce trở thành một trong những thành ngữ tổng quát hóa trong thời gian gần đây. 
 
+MapReduce sẽ  bao gồm những thủ tục sau: thủ tục 1 Map() và 1 Reduce(). Thủ tục Map() bao gồm lọc (filter) và phân loại (sort) trên dữ liệu khi thủ tục khi thủ tục Reduce() thực hiện quá trình tổng hợp dữ liệu. Đây là mô hình dựa vào các khái niệm biển đối của bản đồ và reduce những chức năng lập trình theo hướng chức năng. Thư viện của thủ tục Map() và Reduce() sẽ được viết bằng nhiều loại ngôn ngữ khác nhau. Thủ tục được cài đặt miễn phí và được sử dụng phổ biến nhất là là Apache Hadoop.
+
+## Đặc trưng
+
+<ul>
+  <li>MapReduce có khả năng xử lý dễ dàng mọi bài toán có lượng dữ liệu lớn nhờ khả năng tác vụ phân tích và tính toán phức tạp</li>
+  <li>Mapreduce có khả năng chạy song song trên các máy có sự phân tán khác nhau. Với khả năng hoạt động độc lập kết hợp phân tán, xử lý các lỗi kỹ thuật để mang lại nhiều hiệu quả cho toàn hệ thống.</li>
+  <li>MapRedue có khả năng thực hiện trên nhiều nguồn ngôn ngữ lập trình khác nhau</li>
+</ul>
  
-
+## MapReduce sẽ hoạt động như thế nào?
+Mapreduce hoạt động dựa vào nguyên tắc như sau:
+<ul>
+  <li>Phân chia các dữ liệu cần xử lý thành nhiều phần nhỏ trước khi thực hiện.</li>
+<li>Xử lý các vấn đề nhỏ theo phương thức song song trên các máy tính rồi phân tán hoạt động theo hướng độc lập.</li>
+  <li>Tiến hành tổng hợp những kết quả thu được để đề ra được kết quả sau cùng.</li>
+ </ul>
+ 
+Các bước hoạt động của MapReduce
+<ul>
+  <li>Bước 1: Tiến hành chuẩn bị các dữ liệu đầu vào để cho Map() có thể xử lý.</li>
+  <li>Bước 2: Lập trình viên thực thi các mã Map() để xử  lý.</li>
+  <li>Bước 3: Tiến hành trộn lẫn các dữ liệu được xuất ra bởi Map() vào trong Reduce Processor</li>
+  <li>Bước 4: Tiến hành thực thi tiếp mã Reduce() để có thể xử lý tiếp các dữ liệu cần thiết. </li>
+  <li>Bước 5: Thực hiện tạo các dữ liệu xuất ra cuối cùng. </li>
+  </ul>
