@@ -5,7 +5,7 @@
 - Được xây dựng bằng ngôn ngữ Scala.
 - Tốc độ nhanh hơn Mapreduce từ 10 ~ 100 lần
 
-## 1.2 Lọi ích
+## 1.2 Lợi ích
 - Fast processing: xử lí nhanh
 - In-memory computation: tính toán trên RAM
 - Fault Tolerance: khả năng chống chịu lỗi
@@ -23,7 +23,8 @@
   Spark Properties kiểm soát hầu hết các tham số ứng dụng và có thể được thiết lập bằng cách sử dụng đối tượng `SparkConf` hoặc thông qua các thuộc tính hệ thống Java.
   
   Spark Properties kiểm soát hầu hết các cài đặt ứng dụng và được cấu hình riêng cho từng ứng dụng. Các thuộc tính này có thể được cài đặt trực tiếp trên `SparkConf` được chuyển tới `SparkContext`. `SparkConf` cho phép bạn định cấu hình một số thuộc tính phổ biến (ví dụ: URL chính và tên ứng dụng), cũng như các cặp khóa-giá trị tùy ý thông qua phương thức `set()` . Ví dụ: 
-    - Có thể khởi tạo một ứng dụng với hai luồng như sau: Lưu ý rằng chúng ta chạy với local[2], nghĩa là hai luồng - đại diện cho sự song song “tối thiểu”, có thể giúp phát hiện các lỗi chỉ tồn tại khi chạy trong ngữ cảnh phân tán.   
+    - Có thể khởi tạo một ứng dụng với hai luồng như sau: Lưu ý rằng chúng ta chạy với local[2], nghĩa là hai luồng - đại diện cho sự song song “tối thiểu”, có thể giúp phát hiện các lỗi chỉ tồn tại khi chạy trong ngữ cảnh phân tán.
+    -    
  
  ```Javascript
     val conf = new SparkConf()
@@ -51,7 +52,7 @@ spark = SparkSession.builder()
       .appName("Noname")
       .getOrCreate()
 ```
-### 2.1Sử dụng parallelize()
+### 2.1 Sử dụng parallelize()
 
 SparkContext có một số chức năng để sử dụng với RDD.
 
@@ -68,7 +69,7 @@ dataList = [a,b,c,d,e,f]
 rdd = spark.sparkContext.parallelize(dataList)
 ```
 
-### 2.1Sử dụng textFile()
+### 2.1 Sử dụng textFile()
 
 ```python
 import pyspark
