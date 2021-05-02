@@ -4,19 +4,15 @@
 - Cung cấp các APIs cho Scala, Java, Python.
 - Được xây dựng bằng ngôn ngữ Scala.
 - Tốc độ nhanh hơn Mapreduce từ 10 ~ 100 lần
-<p align="center">
-<img src="https://static.javatpoint.com/tutorial/pyspark/images/pyspark-rdd2.png" width="460" height="300">
- </p>
- 
-## 1.2 Đặc trưng:
+
+## 1.2 Lọi ích
 - Fast processing: xử lí nhanh
 - In-memory computation: tính toán trên RAM
 - Fault Tolerance: khả năng chống chịu lỗi
 - Near Real time stream processing: xử lí dữ liệu gần như thời gian thực
-- Lazy evaluation.
-- Support Multiple Languages.
-- Cost Efficent.
-## 1.3 Spark components
+- Support Multiple Languages: Hỗ trợ đa ngôn ngữ.
+
+## 1.3 Thành phần
 - Spark core: cung cấp nền tảng cho các sprak Applications
 - Spark SQL: xử lí dữ liệu semi-structured/structured data bằng SQL/HQL
 - Spark Streaming: xử lí dữ liệu streaming
