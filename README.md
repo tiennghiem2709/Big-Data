@@ -112,4 +112,34 @@ Ví dụ :
 </ul>
 
 
-# 4.Spark DataFraem
+# 4. DataFrame
+## 4.1 Giới thiệu
+DataFrame thường đề cập đến một cấu trúc dữ liệu, về bản chất là dạng bảng. Nó đại diện cho các hàng, mỗi hàng bao gồm một số quan sát. Các hàng có thể có nhiều định dạng dữ liệu (không đồng nhất), trong khi một cột có thể có dữ liệu cùng loại (đồng nhất). DataFrames thường chứa một số siêu dữ liệu ngoài dữ liệu; ví dụ, tên cột và hàng. Chúng ta có thể nói rằng DataFrames không là gì, ngoài các cấu trúc dữ liệu 2 chiều, tương tự như bảng SQL hoặc bảng tính.
+Lợi ích khi làm việc với DataFrame :
+  
+-- 1.	Xử lý dữ liệu có cấu trúc và bán cấu trúc: DataFrames được thiết kế để xử lý một tập hợp lớn dữ liệu có cấu trúc cũng như bán cấu trúc . Các quan sát trong Spark DataFrame được tổ chức dưới các cột được đặt tên, giúp Apache Spark hiểu sơ đồ của Dataframe. Điều này giúp Spark tối ưu hóa kế hoạch thực hiện trên các truy vấn này. Nó cũng có thể xử lý petabyte dữ liệu.
+
+-- 2.	API DataFrames thường hỗ trợ các phương thức phức tạp để cắt và xử lý dữ liệu. Nó bao gồm các hoạt động như "chọn" các hàng, cột và ô theo tên hoặc theo số, lọc ra các hàng, v.v. Dữ liệu thống kê thường rất lộn xộn và chứa nhiều giá trị thiếu và không chính xác và vi phạm phạm vi. Vì vậy, một tính năng cực kỳ quan trọng của DataFrames là quản lý rõ ràng dữ liệu bị thiếu.
+
+
+-- 3.	DataFrames đã hỗ trợ cho một loạt các định dạng và nguồn dữ liệu, chúng ta sẽ xem xét vấn đề này sau trong hướng dẫn Pyspark DataFrames này. Họ có thể lấy dữ liệu từ nhiều nguồn khác nhau.
+
+-- 4.	Hỗ trợ nhiều ngôn ngữ: Nó có hỗ trợ API cho các ngôn ngữ khác nhau như Python, R, Scala, Java, giúp mọi người có nền tảng lập trình khác nhau dễ sử dụng hơn.
+## 4.2 Tạo DataFrame từ Pandas
+<p>Trong phần này, chúng ta xem cách thực hiện việc này bằng cách sử dụng hàm tạo DataFrame cùng với: </p>
+
+<ul>
+  <li>Python dictionaries</li>
+  <li>Python lists</li>
+  <li>Mảng 2 chiều NumPy</li>
+  <li>Files</li>
+</ul>
+Bạn có thể bắt đầu bằng cách import Pandas cùng với NumPy, mà bạn sẽ sử dụng trong ví dụ sau:
+
+>> import numpy as np
+>> import pandas as pd
+
+1.	Tạo Pandas DataFrame với Dictionaries:
+
+
+
