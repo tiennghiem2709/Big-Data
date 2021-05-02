@@ -35,12 +35,12 @@
    Tham khảo:
    * [Spark Properties](https://apache.googlesource.com/spark/+/master/docs/configuration.md)
 # 3.Spark Rdd
-## 1.Giới thiệu
+## 3.1 Giới thiệu
 <p><b>Resilient Distributed Datasets</b> <i>(RDD)</i> là một cấu trúc dữ liệu cơ bản của Spark. Nó là một tập hợp bất biến phân tán của một đối tượng. Mỗi <i>dataset</i> trong <i>RDD</i> được chia ra thành nhiều phân vùng <i>logical</i>. Có thể được tính toán trên các node khác nhau của một cụm máy chủ <i>(cluster)</i>.</p>
 
 <p><i>RDDs</i> có thể chứa bất kỳ kiểu dữ liệu nào của <i>Python, Java</i> hoặc đối tượng <i>Scala</i>, bao gồm các kiểu dữ liệu do người dùng định nghĩa. Thông thường, <i>RDD</i> chỉ cho phép đọc, phân mục tập hợp của các bản ghi. <i>RDDs</i> có thể được tạo ra qua điều khiển xác định trên dữ liệu trong bộ nhớ hoặc <i>RDDs</i>, <i>RDD</i> là một tập hợp có khả năng chịu lỗi mỗi thành phần có thể được tính toán song song.</p>
 
-## 2.Khởi tạo
+## 3.2 Khởi tạo
 Để tạo RDD, trước tiên cần tạo **SparkSession**, đây là một điểm vào ứng dụng PySpark. SparkSession có thể được tạo bằng cách sử dụng một *builder()* hoặc *newSession()* là các phương thức của **SparkSession**.
 
 **SparkSession** tạo ra một biến sparkContext. Có thể tạo nhiều đối tượng SparkSession nhưng chỉ một SparkContext cho mỗi JVM (Java virtual machine). Trong trường hợp nếu bạn muốn tạo một SparkContext mới khác, bạn nên dừng Sparkcontext hiện có (sử dụng  *stop()*) trước khi tạo một cái mới.
@@ -52,7 +52,7 @@ spark = SparkSession.builder()
       .appName("Noname")
       .getOrCreate()
 ```
-### 2.1 Sử dụng parallelize()
+### 3.2.1 Sử dụng parallelize()
 
 SparkContext có một số chức năng để sử dụng với RDD.
 
@@ -69,7 +69,7 @@ dataList = [a,b,c,d,e,f]
 rdd = spark.sparkContext.parallelize(dataList)
 ```
 
-### 2.1 Sử dụng textFile()
+### 3.2.2 Sử dụng textFile()
 
 ```python
 import pyspark
@@ -83,8 +83,8 @@ spark = SparkSession.builder.master("local[2]").appName("Noname").getOrCreate()
 text_file = spark.sparkContext.textFile("drive/MyDrive/BIGDATA/a.txt")
 ```
 Khi bạn có RDD, bạn có thể thực hiện các hoạt động chuyển đổi và hành động. Bất kỳ hoạt động nào bạn thực hiện trên RDD đều chạy song song.
-## 3.Các Tranformation và Action với Rdd
-### 3.1 Tranformation
+## 3.3 Các Tranformation và Action với Rdd
+### 3.3.1 Tranformation
 
 <p>Qua 1 phương thức transformations thì sẽ cho phép tạo mới 1 RDD từ 1 RDD đã tồn tại. Tất cả các transformation đều là lazy, có nghĩa là các transformation này sẽ không thực hiện tính toán trong phương thức ngay mà chúng sẽ được lưu lại thành dữ liệu cơ bản( ví dụ như file) và chúng chỉ thực hiện tính toán khi 1 action được gọi để yêu cầu trả về kết quả cho driver program. Nhờ thiết kế này mà Spark chạy hiệu quả hơn.</p>
 
@@ -98,7 +98,7 @@ Ví dụ :
   <li>Distinct([numTasks]))	Trả về 1 RDD mới chứa mỗi phần tử là duy nhất của tập dữ liệu nguồn(đầu vào).</li>  
 </ul>
 
-### 3.2 Action
+### 3.3.2 Action
 <p>Qua 1 phương thức actions thì sẽ cho phép trả về 1 giá trị cho driver program sau khi chạy tính toán trên tập dữ liệu.<p>
  
 Ví dụ :
@@ -161,4 +161,38 @@ import pandas as pd
 <img src="4.png" width="550" height="200">
 </p>
 
+## 4.2 Tạo DataFrame từ Pandas PySpark
+
+1.	Tạo DataFrame từ RDD
+
+Một cách dễ dàng để tạo PySpark DataFrame theo cách thủ công là từ RDD hiện có. Đầu tiên, chúng ta hãy tạo một Spark RDD.
+```Javascript
+   spark=SparkSession.builder.appName('Noname').getOrCreate()
+   rdd= spark.SparkContext.parallelize(data)
+```
+Sử dụng hàm toDF():
+```Python
+  dfFromRDD1 = rdd.toDF()
+```
+Sử dụng createDataFrame() từ SparkSession:
+```Python
+  dfFromRDD2 = spark.createDataFrame(rdd).toDF(*columns)
+```
+2.	Tạo DataFrame từ List Collection
+
+Thay vì sử dụng Rdd ta sẽ sử dụng list (data)
+```Python
+  dfFromRDD = spark.createDataFrame(data).toDF(*columns)
+```
+3.	Tạo DataFrame từ datasource ( file)
+```Python
+df = spark.read.csv("/src/resources/file.csv")
+df = spark.read.text("/src/resources/file.text")
+df = spark.read.json("/src/resources/file.json")
+
+```
+
+
+
+ 
 
