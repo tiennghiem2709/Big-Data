@@ -136,10 +136,29 @@ Lợi ích khi làm việc với DataFrame :
 </ul>
 Bạn có thể bắt đầu bằng cách import Pandas cùng với NumPy, mà bạn sẽ sử dụng trong ví dụ sau:
 
->> import numpy as np
->> import pandas as pd
+import numpy as np
 
-1.	Tạo Pandas DataFrame với Dictionaries:
+import pandas as pd
 
+
+1. Tạo Pandas DataFrame với Dictionaries:
+<p align="center">
+<img src="1.png" width="500" height="200">
+</p>
+
+2.	Tạo Pandas DataFrame với Lists:
+<p align="center">
+<img src="2.png" width="500" height="200">
+</p>
+
+3.	Tạo Pandas DataFrame với NumPy Arrays
+<p align="center">
+<img src="3.png" width="500" height="230">
+</p>
+
+4.	Tạo Pandas DataFrame với từ Files
+<p align="center">
+<img src="4.png" width="550" height="200">
+</p>
 
 
