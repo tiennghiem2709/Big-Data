@@ -191,6 +191,71 @@ df = spark.read.text("/src/resources/file.text")
 df = spark.read.json("/src/resources/file.json")
 
 ```
+# 5. Machine Learning
+## 5.1 Spark MLlib
+MLlib là thư viện học máy có thể mở rộng của Spark bao gồm các thuật toán và tiện ích học tập phổ biến, bao gồm phân loại, hồi quy, phân cụm, lọc cộng tác, giảm kích thước, cũng như các nguyên tắc tối ưu hóa cơ bản, như được nêu bên dưới:
+### 5.1.1 Data Types
+<ul>
+  <li>Local vector</li>
+  <li>Labeled point</li>
+  <li>Local matrix</li>
+  <li>Distributed matrix</li>
+ </ul>
+  Xem thêm: https://spark.apache.org/docs/1.1.0/mllib-data-types.html
+  
+### 5.1.2 Basic Statistics
+<ul>
+  <li>summary statistics</li>
+  <li>correlations</li>
+  <li>stratified sampling</li>
+  <li>hypothesis testing</li>
+  <li>random data generation</li>
+ </ul>
+  Xem thêm: https://spark.apache.org/docs/1.1.0/mllib-statistics.html
+  
+### 5.1.3 Classification and regression
+<ul>
+  <li>Linear models</li>
+  <li>Decision tree</li>
+  <li>Naive Bayes</li>
+ </ul>
+  Xem thêm: https://spark.apache.org/docs/1.1.0/mllib-classification-regression.html 
+  
+### 5.1.4 Clustering
+<ul>
+  <li>K-means</li>
+
+ </ul>
+  Xem thêm: https://spark.apache.org/docs/1.1.0/mllib-clustering.html
+    
+## 5.2 Example
+
+### Ví dụ về Machine Learning áp dụng thuật toán Naive Bayes cho  dataset Irris (thực hiện trên Google Colab)
+
+Tiền xử lý 
+
+<p align="center">
+<img src="5.PNG" width="max" height="320">
+</p>
+
+Xử lý dữ liệu
+
+<p align="center">
+<img src="6.PNG" width="max" height="420">
+</p>
+
+Tạo model và predict
+
+<p align="center">
+<img src="7.PNG" width="max" height="420">
+</p>
+
+Đánh giá
+
+<p align="center">
+<img src="8.PNG" width="max" height="180">
+</p>
+
 
 
 
